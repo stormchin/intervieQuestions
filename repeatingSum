@@ -1,0 +1,35 @@
+#Problem Repeating Sum
+"""Concepts required: If statements, Loops
+
+Write a function called repeatingSum that takes a positive integer and returns the sum of all digits that match the next digit in the integer.
+
+Below are some examples where I underlined the digits that match the next digit.
+
+repeatingSum(1122) → 3
+The sum is 3 because the first digit (1) matches the one following it, and the third digit (2) matches the one following it. 
+1 + 2 = 3
+
+repeatingSum(3333) → 9
+The sum is 9 because each of the first 3 digits are repeated.
+3 + 3 + 3 = 9
+
+repeatingSum(121212) → 0
+The sum is 0 because there are no consecutive digits.
+
+repeatingSum(12212112) → 3
+The sum is 3 because the second digit (2) repeats and the sixth digit (1) repeats.
+
+You can assume the input number will always be an integer greater than 0."""
+
+#Coded Solution
+def repeatingSum(num):
+  num = str(num)
+  count = 0
+  i=0
+  for number in num:
+    i+=1
+    if i< len(num):
+      if number == num[i]:
+        count += int(number)
+        print(count)
+  return count
