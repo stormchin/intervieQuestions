@@ -1,0 +1,32 @@
+#Problem Spongebob
+
+"""Concepts required: If statements, Loops, String parsing
+
+Write a function called spongebob that takes a string that might have a mix of lower and uppercase letters, like "SqUiDwArD", and returns a string in which all the capitals are now lowercase and all the lowercase are now capitals, like "sQuIdWaRd". If the input string contains any non-letters, they should remain the same.
+
+Below are some examples:
+spongebob("SqUiDwArD") → "sQuIdWaRd"
+spongebob("spOngeBOB") → "SPoNGEbob"
+spongebob("spOn123geB OB") → "SPoN123GEb ob"   """
+
+
+def spongebob(inputString):
+  for index in range(0,len(inputString)):
+    if inputString[index].isalpha():
+      if inputString[index].islower():
+        inputString = list(inputString)
+        inputString[index] = inputString[index].upper()
+        str =""
+        inputString = str.join(inputString)
+      else:
+        inputString = list(inputString)
+        inputString[index] = inputString[index].lower()
+        str =""
+        inputString = str.join(inputString)
+  return inputString
+      
+  
+# Below is code that calls the function so you can see
+# its output. Feel free to modify it to help test your code.
+test = 'SqUiDwArD'
+print('The spongebob for', test, 'is', spongebob(test))
