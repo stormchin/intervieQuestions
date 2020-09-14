@@ -24,6 +24,8 @@ You can assume the input number will always be an integer greater than 0."""
 #Coded Solution
 def repeatingSum(num):
   num = str(num)
+  if (len(num) == 1):
+    return 0
   count = 0
   i=0
   for number in num:
